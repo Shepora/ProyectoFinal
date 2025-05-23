@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import model.HabitacionRequest
 import network.RetrofitClient
 
@@ -23,19 +24,25 @@ class RoomViewModel : ViewModel() {
                     estado = estado
                 )
 
-                val response = RetrofitClient.HabitacionApiService
+                val response = RetrofitClient.habitacionApiService
                     .registrarHabitacion(habitacion)
                     .execute()
 
                 if (response.isSuccessful) {
-                    onSuccess()
+                    withContext(Dispatchers.Main) {
+                        onSuccess()
+                    }
                 } else {
-                    onError("Error del servidor: ${response.code()}")
+                    withContext(Dispatchers.Main) {
+                        onError("Error del servidor: ${response.code()}")
+                    }
                 }
 
             } catch (e: Exception) {
                 e.printStackTrace()
-                onError("Excepción: ${e.message}")
+                withContext(Dispatchers.Main) {
+                    onError("Excepción: ${e.message}")
+                }
             }
         }
     }
