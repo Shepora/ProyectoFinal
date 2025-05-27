@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddCircle
+import androidx.compose.material.icons.filled.Create
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Place
@@ -75,8 +77,18 @@ fun DashboardScreen(navController: NavController) {
             )
             DashboardButton(
                 text = "Registrar Reserva",
-                icon = Icons.Default.AddCircle,
+                icon = Icons.Default.DateRange,
                 onClick = { navController.navigate(Routes.AddReserva.route) }
+            )
+            DashboardButton(
+                text = "Ver Reserva",
+                icon = Icons.Default.AddCircle,
+                onClick = { navController.navigate(Routes.ViewReserva.route) }
+            )
+            DashboardButton(
+                text = "Asignar Parqueaderos",
+                icon = Icons.Default.Create,
+                onClick = { navController.navigate(Routes.ParkingAdd.route) }
             )
         }
     }
