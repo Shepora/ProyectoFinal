@@ -71,12 +71,12 @@ fun DashboardScreen(navController: NavController) {
             DashboardButton(
                 text = "Ver Habitaciones",
                 icon = Icons.Default.Place,
-                onClick = { /* Navegar a Ver Habitaciones */ }
+                onClick = { navController.navigate(Routes.ViewRoom.route) }
             )
             DashboardButton(
                 text = "Registrar Reserva",
                 icon = Icons.Default.AddCircle,
-                onClick = { /* Navegar a Registrar Reserva */ }
+                onClick = { navController.navigate(Routes.AddReserva.route) }
             )
         }
     }

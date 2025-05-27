@@ -20,4 +20,8 @@ object RetrofitClient {
     val habitacionApiService: HabitacionApiService by lazy {
         retrofit.create(HabitacionApiService::class.java)
     }
+    val reservaApiService: ReservaApiService by lazy {
+        retrofit.create(ReservaApiService::class.java)
+    }
+
 }

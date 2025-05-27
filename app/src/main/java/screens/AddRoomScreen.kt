@@ -152,7 +152,7 @@ fun AddRoomScreen(viewModel: RoomViewModel, navController: NavController) {
                             .fillMaxWidth()
                             .height(50.dp),
                         shape = RoundedCornerShape(8.dp),
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF4E599D))
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF4E589B))
                     ) {
                         Text("Registrar", color = Color.White)
                     }
